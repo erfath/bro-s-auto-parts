@@ -2,14 +2,18 @@
     {
         "id": "1",
         "name": "Breaks Pad",
-        "price": "179",
+        "price": "150",
+        "minOrder": "100",
+        "available": "1620",
         "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
         "icon": "https://i.ibb.co/mvVyxNZ/Brakes.jpg"
     },
     {
         "id": "2",
         "name": "Engine oil",
-        "price": "179",
+        "price": "239",
+        "minOrder": "200",
+        "available": "5730",
         "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
         "icon": "https://i.ibb.co/NrQPY95/lub.jpg"
     },
@@ -17,41 +21,53 @@
         "id": "3",
         "name": "Spark Plug",
         "price": "179",
+        "minOrder": "500",
+        "available": "4490",
         "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
         "icon": "https://i.ibb.co/6HFpGHX/Spark-plug.jpg"
     },
     {
         "id": "4",
         "name": "Filters",
-        "price": "179",
+        "price": "128",
+        "minOrder": "300",
+        "available": "3740",
         "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
         "icon": "https://i.ibb.co/zVCtMMc/Filters.jpg"
     },
     {
         "id": "5",
         "name": "Tyres",
-        "price": "179",
+        "price": "378",
+        "minOrder": "50",
+        "available": "750",
         "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
         "icon": "https://i.ibb.co/yqjvMfg/tyre.jpg"
     },
     {
         "id": "6",
         "name": "Shock Absorber",
-        "price": "179",
+        "price": "199",
+        "minOrder": "500",
+        "available": "2750",
         "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
         "icon": "https://i.ibb.co/bF4q3hM/shock-absorber.jpg"
     },
     {
         "id": "7",
         "name": "Car Care",
-        "price": "179",
+        "price": "159",
+        "minOrder": "200",
+        "available": "1249",
         "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
         "icon": "https://i.ibb.co/dbzTMF5/car-care.jpg"
     },
     {
         "id": "8",
         "name": "LED Bulb",
-        "price": "179",
+        "price": "150",
+        "minOrder": "300",
+        "available": "1749",
         "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
         "icon": "https://i.ibb.co/tDXTnf9/bulb.jpg"
     },
@@ -59,6 +75,8 @@
         "id": "9",
         "name": "Tools Set",
         "price": "179",
+        "minOrder": "250",
+        "available": "2345",
         "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
         "icon": "https://i.ibb.co/9Wqg9Bb/Tools.jpg"
     }
