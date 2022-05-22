@@ -1,9 +1,13 @@
 import React from 'react';
+import Button from '../Shared/Button';
+import Banner from './Banner';
+import Items from './Items';
 
 const Home = () => {
     return (
         <div>
-            <h2>My Home</h2>
+            <Banner></Banner>
+            <Items></Items>
         </div>
     );
 };

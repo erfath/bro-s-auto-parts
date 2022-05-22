@@ -1,0 +1,65 @@
+[
+    {
+        "id": "1",
+        "name": "Breaks Pad",
+        "price": "179",
+        "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
+        "icon": "https://i.ibb.co/mvVyxNZ/Brakes.jpg"
+    },
+    {
+        "id": "2",
+        "name": "Engine oil",
+        "price": "179",
+        "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
+        "icon": "https://i.ibb.co/NrQPY95/lub.jpg"
+    },
+    {
+        "id": "3",
+        "name": "Spark Plug",
+        "price": "179",
+        "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
+        "icon": "https://i.ibb.co/6HFpGHX/Spark-plug.jpg"
+    },
+    {
+        "id": "4",
+        "name": "Filters",
+        "price": "179",
+        "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
+        "icon": "https://i.ibb.co/zVCtMMc/Filters.jpg"
+    },
+    {
+        "id": "5",
+        "name": "Tyres",
+        "price": "179",
+        "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
+        "icon": "https://i.ibb.co/yqjvMfg/tyre.jpg"
+    },
+    {
+        "id": "6",
+        "name": "Shock Absorber",
+        "price": "179",
+        "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
+        "icon": "https://i.ibb.co/bF4q3hM/shock-absorber.jpg"
+    },
+    {
+        "id": "7",
+        "name": "Car Care",
+        "price": "179",
+        "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
+        "icon": "https://i.ibb.co/dbzTMF5/car-care.jpg"
+    },
+    {
+        "id": "8",
+        "name": "LED Bulb",
+        "price": "179",
+        "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
+        "icon": "https://i.ibb.co/tDXTnf9/bulb.jpg"
+    },
+    {
+        "id": "9",
+        "name": "Tools Set",
+        "price": "179",
+        "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.",
+        "icon": "https://i.ibb.co/9Wqg9Bb/Tools.jpg"
+    }
+]
