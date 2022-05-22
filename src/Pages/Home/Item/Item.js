@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Shared/Button';
+import Button from '../../Shared/Button';
 import './item.css'
 
 const item = ({ item }) => {
@@ -18,7 +18,7 @@ const item = ({ item }) => {
                         <p>Min. Order: {minOrder} </p>
                     </div>
                     <div class="card-actions ">
-                        <Button>Buy Now</Button>
+                        <Button>Purchase Now</Button>
                     </div>
                 </div>
 
