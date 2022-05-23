@@ -1,8 +1,16 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
+import auth from '../../firebase.init';
 import carlogo from '../../images/car-logo.png'
 
 const Navbar = ({ children }) => {
+  const [user] = useAuthState(auth)
+
+  const handleSignOut = () => {
+    signOut(auth);
+  }
   return (
     <div class="drawer drawer-end  ">
       <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
@@ -20,8 +28,16 @@ const Navbar = ({ children }) => {
               <li><NavLink to='/profile'>My Profile </NavLink></li>
               <li><NavLink to='/manageOrders'>Manage All Orders </NavLink></li>
               <li><NavLink to='/addProduct'>Add a Product</NavLink></li>
-              <li><NavLink to='/manageProducts'>Manage Products</NavLink></li>
-              <li><NavLink to='/login'> Login </NavLink></li>
+              <li><NavLink to='/manageItems'>Manage Items</NavLink></li>
+              <li>{
+                user
+
+                  ?
+                  <button className='btn btn-primary rounded-lg' onClick={handleSignOut}>Logout</button>
+
+                  :
+
+                  <NavLink to='/login'> Login </NavLink>}</li>
             </ul>
           </div>
           <div class="flex-none lg:hidden">
