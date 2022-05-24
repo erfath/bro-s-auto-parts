@@ -1,9 +1,15 @@
-import React from 'react';
+import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import Button from '../../Shared/Button';
 import './item.css'
 
-const item = ({ item }) => {
-    const { id, name, description, icon, price, available, minOrder } = item;
+const Item = ({ item }) => {
+    const { _id, name, description, icon, price, available, minOrder } = item;
+
+    const navigate = useNavigate();
+    const navigateToItemDetails =(id) => {
+        navigate(`/item/${id}`);
+    }
     return (
         <div class="card bg-base-100 shadow-xl ">
             <figure><img src={icon} alt="Shoes" /></figure>
@@ -18,7 +24,7 @@ const item = ({ item }) => {
                         <p>Min. Order: {minOrder} </p>
                     </div>
                     <div class="card-actions ">
-                        <Button>Purchase Now</Button>
+                        <button className='ntn btn-primary rounded-lg text-white hover:bg-info p-2' onClick={() => navigateToItemDetails(_id)}>Purchase Now</button>
                     </div>
                 </div>
 
@@ -27,4 +33,4 @@ const item = ({ item }) => {
     );
 };
 
-export default item;
+export default Item;

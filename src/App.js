@@ -8,17 +8,23 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register';
 import PrivateRoute from './Pages/Login/PrivateRoute';
 import ManageItems from './Pages/ManageItems/ManageItems';
+import ItemDetails from './Pages/Home/ItemDetails/ItemDetails';
 
 function App() {
   return (
     <div>
       <Navbar>
         <Routes>
-          <Route path='/home' element={<Home></Home>}></Route>
           <Route path='/' element={<Home></Home>}></Route>
+          <Route path='/home' element={<Home></Home>}></Route>
           <Route path='/dashboard' element={
             <PrivateRoute>
               <Dashboard></Dashboard>
+            </PrivateRoute>
+          }></Route>
+          <Route path='/item/:id' element={
+            <PrivateRoute>
+              <ItemDetails></ItemDetails>
             </PrivateRoute>
           }></Route>
           <Route path='/profile' element={<Home></Home>}></Route>

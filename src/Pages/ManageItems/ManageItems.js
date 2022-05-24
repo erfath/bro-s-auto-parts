@@ -26,10 +26,10 @@ const ManageItems = () => {
             <table class="table w-full">
                 <thead>
                     <tr>
-                        <th className='text-2xl'>SL.</th>
-                        <th className='text-2xl'>Name</th>
-                        <th className='text-2xl'>Image</th>
-                        <th className='text-2xl'>Action</th>
+                        <th className='lg:text-2xl'>SL.</th>
+                        <th className='lg:text-2xl'>Name</th>
+                        <th className='lg:text-2xl'>Image</th>
+                        <th className='lg:text-2xl'>Action</th>
                     </tr>
                 </thead>
                 <tbody className='bg-secondary'>

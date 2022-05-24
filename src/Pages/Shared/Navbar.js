@@ -33,7 +33,9 @@ const Navbar = ({ children }) => {
                 user
 
                   ?
-                  <button className='btn btn-primary rounded-lg' onClick={handleSignOut}>Logout</button>
+                  <span><button className='btn btn-primary hover:bg-error text-white' onClick={handleSignOut}>Logout</button><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>{user.displayName}</span> 
 
                   :
 
@@ -54,8 +56,24 @@ const Navbar = ({ children }) => {
         <label for="my-drawer-3" class="drawer-overlay"></label>
         <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
           {/* <!-- Sidebar content here --> */}
-          <li><a>Sidebar Item 1</a></li>
-          <li><a>Sidebar Item 2</a></li>
+          <li><NavLink to='/home'>Home</NavLink></li>
+              <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+              <li><NavLink to='/myOrders'>My Orders</NavLink></li>
+              <li><NavLink to='/review'>Add A Review </NavLink></li>
+              <li><NavLink to='/profile'>My Profile </NavLink></li>
+              <li><NavLink to='/manageOrders'>Manage All Orders </NavLink></li>
+              <li><NavLink to='/addProduct'>Add a Product</NavLink></li>
+              <li><NavLink to='/manageItems'>Manage Items</NavLink></li>
+              <li>{
+                user
+
+                  ?
+                  <span><button onClick={handleSignOut}>Logout</button><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>{user.displayName}</span> 
+                  :
+
+                  <NavLink to='/login'> Login </NavLink>}</li>
 
         </ul>
 

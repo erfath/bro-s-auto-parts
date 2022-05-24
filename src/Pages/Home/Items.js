@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import useItems from '../../Hooks/useItems';
 import Item from './Item/Item'
 
 const Items = () => {
-    const [items, setItems] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/item')
-            .then(res => res.json())
-            .then(data => setItems(data.slice(0, 6)))
-    }, [])
+    const [items, setItems] = useItems([]);
+    const navigate = useNavigate();
+    const navigateToManageItem = () => {
+        navigate('/manageItems')
+    }
     return (
         <div className='bg-secondary'>
             <h1 className='text-4xl text-left text-primary font-bold pt-10 mb-10 lg:mx-16 '>Popular Products</h1>
@@ -20,7 +21,7 @@ const Items = () => {
                 }
             </div>
             <div className='text-right'>
-                <button className='btn  text-primary text-right m-16 btn-link'>Explore More</button>
+                <button onClick={() => navigateToManageItem()} className='btn  text-primary text-right m-16 btn-link'>Explore More</button>
             </div>
         </div>
     );
