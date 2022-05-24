@@ -6,7 +6,7 @@ import Item from './Item/Item'
 const Items = () => {
     const [items, setItems] = useItems([]);
     const navigate = useNavigate();
-    const navigateToManageItem = () => {
+    const navigateToManageItem = ()=>{
         navigate('/manageItems')
     }
     return (
@@ -21,7 +21,7 @@ const Items = () => {
                 }
             </div>
             <div className='text-right'>
-                <button onClick={() => navigateToManageItem()} className='btn  text-primary text-right m-16 btn-link'>Explore More</button>
+                <button onClick={()=> navigateToManageItem()} className='btn  text-primary text-right m-16 btn-link'>Explore More</button>
             </div>
         </div>
     );
