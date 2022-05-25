@@ -9,6 +9,10 @@ import Register from './Pages/Login/Register';
 import PrivateRoute from './Pages/Login/PrivateRoute';
 import ManageItems from './Pages/ManageItems/ManageItems';
 import ItemDetails from './Pages/Home/ItemDetails/ItemDetails';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import MyOredrs from './Pages/Dashboard/MyOredrs';
+import MyReview from './Pages/Dashboard/MyReview';
 
 function App() {
   return (
@@ -16,23 +20,27 @@ function App() {
       <Navbar>
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
-          <Route path='/home' element={<Home></Home>}></Route>
-          <Route path='/dashboard' element={
+          <Route path='home' element={<Home></Home>}></Route>
+          <Route path='dashboard' element={
             <PrivateRoute>
               <Dashboard></Dashboard>
             </PrivateRoute>
-          }></Route>
-          <Route path='/item/:id' element={
+          }>
+            <Route index element={<MyOredrs></MyOredrs>}></Route>
+            <Route path='review' element={<MyReview></MyReview>}></Route>
+          </Route>
+          <Route path='item/:id' element={
             <PrivateRoute>
               <ItemDetails></ItemDetails>
             </PrivateRoute>
           }></Route>
-          <Route path='/profile' element={<Home></Home>}></Route>
-          <Route path='/manageItems' element={<ManageItems></ManageItems>}></Route>
-          <Route path='/login' element={<Login></Login>}></Route>
-          <Route path='/register' element={<Register></Register>}></Route>
+          <Route path='profile' element={<Home></Home>}></Route>
+          <Route path='manageItems' element={<ManageItems></ManageItems>}></Route>
+          <Route path='login' element={<Login></Login>}></Route>
+          <Route path='register' element={<Register></Register>}></Route>
         </Routes>
       </Navbar>
+      <ToastContainer />
     </div>
   );
 }

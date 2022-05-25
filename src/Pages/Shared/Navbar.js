@@ -16,15 +16,19 @@ const Navbar = ({ children }) => {
       <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col">
         {/* <!-- Navbar --> */}
-        <div class="w-full navbar sticky top-0 z-50 opacity-90 bg-primary text-white ">
+        <div class="w-full navbar sticky top-0 z-50 opacity-90 bg-primary h-12 text-white ">
           <div class="flex-1 px-2 mx-2 text-3xl"> <img style={{ height: '120px' }} src={carlogo} alt="" /> Bro's Auto Parts</div>
           <div class="flex-none hidden lg:block">
             <ul class="menu menu-horizontal">
               {/* <!-- Navbar menu content here --> */}
               <li><NavLink to='/home'>Home</NavLink></li>
-              <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
-              <li><NavLink to='/myOrders'>My Orders</NavLink></li>
-              <li><NavLink to='/review'>Add A Review </NavLink></li>
+
+              {
+                user && <>
+                  <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+                </>
+              }
+
               <li><NavLink to='/profile'>My Profile </NavLink></li>
               <li><NavLink to='/manageOrders'>Manage All Orders </NavLink></li>
               <li><NavLink to='/addProduct'>Add a Product</NavLink></li>
@@ -34,8 +38,8 @@ const Navbar = ({ children }) => {
 
                   ?
                   <span><button className='btn btn-primary hover:bg-error text-white' onClick={handleSignOut}>Logout</button><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>{user.displayName}</span> 
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>{user.displayName}</span>
 
                   :
 
@@ -57,23 +61,23 @@ const Navbar = ({ children }) => {
         <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
           {/* <!-- Sidebar content here --> */}
           <li><NavLink to='/home'>Home</NavLink></li>
-              <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
-              <li><NavLink to='/myOrders'>My Orders</NavLink></li>
-              <li><NavLink to='/review'>Add A Review </NavLink></li>
-              <li><NavLink to='/profile'>My Profile </NavLink></li>
-              <li><NavLink to='/manageOrders'>Manage All Orders </NavLink></li>
-              <li><NavLink to='/addProduct'>Add a Product</NavLink></li>
-              <li><NavLink to='/manageItems'>Manage Items</NavLink></li>
-              <li>{
-                user
+          <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+          <li><NavLink to='/myOrders'>My Orders</NavLink></li>
+          <li><NavLink to='/review'>Add A Review </NavLink></li>
+          <li><NavLink to='/profile'>My Profile </NavLink></li>
+          <li><NavLink to='/manageOrders'>Manage All Orders </NavLink></li>
+          <li><NavLink to='/addProduct'>Add a Product</NavLink></li>
+          <li><NavLink to='/manageItems'>Manage Items</NavLink></li>
+          <li>{
+            user
 
-                  ?
-                  <span><button onClick={handleSignOut}>Logout</button><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>{user.displayName}</span> 
-                  :
+              ?
+              <span><button onClick={handleSignOut}>Logout</button><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>{user.displayName}</span>
+              :
 
-                  <NavLink to='/login'> Login </NavLink>}</li>
+              <NavLink to='/login'> Login </NavLink>}</li>
 
         </ul>
 

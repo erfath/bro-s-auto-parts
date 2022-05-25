@@ -1,19 +1,24 @@
 import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
     return (
         <div class="drawer drawer-mobile">
-            <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content flex flex-col items-center justify-center">
-                {/* <!-- Page content here --> cDRgNQXd8UCP9v0Z  auto-parts*/}
-               
+            <input id="dashboard-drawer" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content ">
+                <div className='flex justify-between p-1'>
+                    <h2 className='text-3xl text-primary font-bold'>My Dashboard</h2>
+                    <label for="dashboard-drawer" class="btn btn-primary drawer-button lg:hidden">Open Dashboard</label>
+                </div>
+                <Outlet></Outlet>
             </div>
             <div class="drawer-side">
-                <label for="my-drawer-2" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+                <label for="dashboard-drawer" class="drawer-overlay"></label>
+                <ul class="menu p-4 overflow-y-auto w-72 bg-base-100 text-base-content">
                     {/* <!-- Sidebar content here --> */}
-                    <li><a>Sidebar Item 1</a></li>
-                    <li><a>Sidebar Item 2</a></li>
+                    <li><Link to='/dashboard'>My Oredrs</Link></li>
+                    <li><Link to='/dashboard/review'>My Review</Link></li>
+
                 </ul>
 
             </div>

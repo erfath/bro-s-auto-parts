@@ -12,7 +12,7 @@ const Item = ({ item }) => {
     }
     return (
         <div class="card bg-base-100 shadow-xl ">
-            <figure><img src={icon} alt="Shoes" /></figure>
+            <figure><img className='w-80' src={icon} alt="Shoes" /></figure>
             <div class="divider"></div>
             <div class="card-body text-center mt-0">
                 <h2 class="text-center text-2xl font-semibold">{name}</h2>
