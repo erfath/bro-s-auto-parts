@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import MyOredrs from './Pages/Dashboard/MyOredrs';
 import MyReview from './Pages/Dashboard/MyReview';
 import AllUsers from './Pages/Dashboard/AllUsers';
+import RequireAdmin from './Pages/Login/RequireAdmin';
 
 function App() {
   return (
@@ -29,7 +30,11 @@ function App() {
           }>
             <Route index element={<MyOredrs></MyOredrs>}></Route>
             <Route path='review' element={<MyReview></MyReview>}></Route>
-            <Route path='users' element={<AllUsers></AllUsers>}></Route>
+            <Route path='users' element={
+              <RequireAdmin>
+                <AllUsers></AllUsers>
+              </RequireAdmin>
+            }></Route>
           </Route>
           <Route path='item/:id' element={
             <PrivateRoute>
