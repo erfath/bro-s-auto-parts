@@ -3,7 +3,7 @@ import car from '../../images/car.jpg'
 
 const OurSays = () => {
     return (
-        <div class=" min-h-screen py-20  bg-secondary">
+        <div class=" min-h-screen py-36  bg-secondary">
             <div class="hero-content flex-col lg:flex-row gap-20">
                 <img src={car} class="rounded-lg shadow-2xl" />
                 <div className='lg:text-left'>
