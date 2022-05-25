@@ -17,7 +17,7 @@ const Navbar = ({ children }) => {
       <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col">
         {/* <!-- Navbar --> */}
-        <div class="w-full navbar sticky top-0 z-50 opacity-90 bg-primary h-12 text-white ">
+        <div class="w-full navbar sticky top-0 z-50 bg-primary h-12 text-white ">
           <div class="flex-1 px-2 mx-2 text-3xl"> <img style={{ height: '120px' }} src={carlogo} alt="" /> Bro's Auto Parts</div>
           <div class="flex-none hidden lg:block">
             <ul class="menu menu-horizontal">
@@ -30,10 +30,6 @@ const Navbar = ({ children }) => {
                 </>
               }
 
-              <li><NavLink to='/profile'>My Profile </NavLink></li>
-              <li><NavLink to='/manageOrders'>Manage All Orders </NavLink></li>
-              <li><NavLink to='/addProduct'>Add a Product</NavLink></li>
-              <li><NavLink to='/manageItems'>Manage Items</NavLink></li>
               <li>{
                 user
 

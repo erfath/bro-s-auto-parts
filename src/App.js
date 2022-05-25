@@ -15,6 +15,8 @@ import MyOredrs from './Pages/Dashboard/MyOredrs';
 import MyReview from './Pages/Dashboard/MyReview';
 import AllUsers from './Pages/Dashboard/AllUsers';
 import RequireAdmin from './Pages/Login/RequireAdmin';
+import AddItem from './Pages/Dashboard/AddItem';
+import MyProfile from './Pages/Dashboard/MyProfile';
 
 function App() {
   return (
@@ -28,21 +30,20 @@ function App() {
               <Dashboard></Dashboard>
             </PrivateRoute>
           }>
-            <Route index element={<MyOredrs></MyOredrs>}></Route>
+            <Route index element={<MyProfile></MyProfile>}></Route>
+            <Route path='orders' element={<MyOredrs></MyOredrs>}></Route>
             <Route path='review' element={<MyReview></MyReview>}></Route>
-            <Route path='users' element={
-              <RequireAdmin>
-                <AllUsers></AllUsers>
-              </RequireAdmin>
-            }></Route>
+
+            <Route path='addItem' element={<RequireAdmin><AddItem></AddItem></RequireAdmin>}></Route>
+            <Route path='manageItems' element={<RequireAdmin><ManageItems></ManageItems></RequireAdmin>}></Route>
+            <Route path='users' element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
           </Route>
           <Route path='item/:id' element={
             <PrivateRoute>
               <ItemDetails></ItemDetails>
             </PrivateRoute>
           }></Route>
-          <Route path='profile' element={<Home></Home>}></Route>
-          <Route path='manageItems' element={<ManageItems></ManageItems>}></Route>
+          <Route path='profile' element={<Home></Home>}></Route>  
           <Route path='login' element={<Login></Login>}></Route>
           <Route path='register' element={<Register></Register>}></Route>
         </Routes>
