@@ -19,6 +19,9 @@ import AddItem from './Pages/Dashboard/AddItem';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Payment from './Pages/Dashboard/Payment';
 import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
+import NotFound from './Pages/NotFound/NotFound';
+import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -26,7 +29,7 @@ function App() {
       <Navbar>
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
-          <Route path='home' element={<Home></Home>}></Route>
+          <Route path='home' element={<Home></Home>}></Route>          
           <Route path='dashboard' element={
             <PrivateRoute>
               <Dashboard></Dashboard>
@@ -47,9 +50,12 @@ function App() {
               <ItemDetails></ItemDetails>
             </PrivateRoute>
           }></Route>
+          <Route path='portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
+          <Route path='blogs' element={<Blogs></Blogs>}></Route>
           <Route path='profile' element={<Home></Home>}></Route>  
           <Route path='login' element={<Login></Login>}></Route>
           <Route path='register' element={<Register></Register>}></Route>
+          <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
       </Navbar>
       <ToastContainer />

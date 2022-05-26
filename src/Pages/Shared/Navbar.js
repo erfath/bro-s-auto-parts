@@ -30,6 +30,9 @@ const Navbar = ({ children }) => {
                 </>
               }
 
+              <li><NavLink to='/blogs'>Blogs</NavLink></li>
+              <li><NavLink to='/portfolio'>My Portfolio</NavLink></li>
+
               <li>{
                 user
 
@@ -41,6 +44,7 @@ const Navbar = ({ children }) => {
                   :
 
                   <NavLink to='/login'> Login </NavLink>}</li>
+
             </ul>
           </div>
           <div class="flex-none lg:hidden">
@@ -59,12 +63,7 @@ const Navbar = ({ children }) => {
           {/* <!-- Sidebar content here --> */}
           <li><NavLink to='/home'>Home</NavLink></li>
           <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
-          <li><NavLink to='/myOrders'>My Orders</NavLink></li>
-          <li><NavLink to='/review'>Add A Review </NavLink></li>
-          <li><NavLink to='/profile'>My Profile </NavLink></li>
-          <li><NavLink to='/manageOrders'>Manage All Orders </NavLink></li>
-          <li><NavLink to='/addProduct'>Add a Product</NavLink></li>
-          <li><NavLink to='/manageItems'>Manage Items</NavLink></li>
+          <li><NavLink to='/blogs'>Blogs</NavLink></li>
           <li>{
             user
 
