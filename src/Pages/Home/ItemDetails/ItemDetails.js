@@ -68,7 +68,7 @@ const ItemDetails = () => {
                 console.log(data)
                 if (success) {
                     toast('Order Pending, Please Pay Here')
-                    navigate('/dashboard')
+                    navigate('/dashboard/orders')
                 }
             })
     }

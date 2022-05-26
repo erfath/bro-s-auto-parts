@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const MyOredrs = () => {
@@ -17,7 +17,6 @@ const MyOredrs = () => {
                 }
             })
                 .then(res => {
-                    console.log('res', res)
                     if (res.status === 401 || res.status === 403) {
                         signOut(auth);
                         localStorage.removeItem('accessToken');
@@ -41,7 +40,8 @@ const MyOredrs = () => {
                             <th>Item</th>
                             <th>Total Amount</th>
                             <th>Order Status</th>
-                            <th>Action</th>
+                            <th>Payment</th>
+                            <th>Cancel Order</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,8 +50,16 @@ const MyOredrs = () => {
                                 <th>{index + 1}</th>
                                 <td>{order.item}</td>
                                 <td>{order.totalPrice}</td>
-                                <td>$$$</td>
-                                <td><button className='btn btn-sm btn-primary border-0 text-white hover:bg-info'>Pay</button> <button className='btn btn-link btn-sm text-error'>Cancel</button> </td>
+                                <td>Pending</td>
+                                <td>
+                                    {(order.totalPrice && !order.paid) && <Link to={`/dashboard/payment/${order._id}`} className='btn btn-sm btn-primary border-0 text-white hover:bg-info'>Pay</Link>}
+                                    {(order.totalPrice && order.paid) && <span className='text-succes'>Paid</span>}
+                                </td>
+                                <td>{                            
+                                        <Link to={``} className='btn btn-link btn-sm text-error'>Cancel</Link>
+                                   
+                                    
+                                   } </td>
                             </tr>)
                         }
 

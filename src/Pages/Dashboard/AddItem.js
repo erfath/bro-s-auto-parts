@@ -42,7 +42,7 @@ const AddItem = () => {
                         .then(inserted => {
                             if (inserted.insertedId) {
                                 toast.success('Item Added to List Successfully');
-                                 reset();
+                                reset();
                             }
                             else {
                                 toast.error("Sorry! Failed to Add Item")
@@ -60,74 +60,76 @@ const AddItem = () => {
 
     return (
         <div>
-            <h2>Add Items here</h2>
-            <form onSubmit={handleSubmit(onSubmit)} class="card-body justify-center">
-                <div class="form-control">
+            <h2 className='text-3xl font-semibold text-primary text-center'>Add Items here</h2>
+            <div className='flex justify-center items-center p-10 '>
+                <form onSubmit={handleSubmit(onSubmit)} class="card-body shadow-2xl border-2  ">
+                    <div class="form-control">
 
-                    <input type="text" placeholder="Item Name" class="input" {...register("name", {
-                        required: {
-                            value: true,
-                            message: 'Name Required'
-                        },
-                    })} />
-                    <label class="label">
-                        {errors.name?.type === 'required' && <span className='label-text-alt text-red-500'>{errors.name.message}</span>}
-                    </label>
-                </div>
-                <div class="form-control">
+                        <input type="text" placeholder="Item Name" class="input input-bordered" {...register("name", {
+                            required: {
+                                value: true,
+                                message: 'Name Required'
+                            },
+                        })} />
+                        <label class="label">
+                            {errors.name?.type === 'required' && <span className='label-text-alt text-red-500'>{errors.name.message}</span>}
+                        </label>
+                    </div>
+                    <div class="form-control">
 
-                    <input type="number" placeholder="Price" class="input" {...register("price", {
-                        required: {
-                            value: true,
-                            message: 'Price Required'
-                        },
-                    })} />
-                    <label class="label">
-                        {errors.price?.type === 'required' && <span className='label-text-alt text-red-500'>{errors.price.message}</span>}
-                    </label>
-                </div>
+                        <input type="number" placeholder="Price" class="input input-bordered" {...register("price", {
+                            required: {
+                                value: true,
+                                message: 'Price Required'
+                            },
+                        })} />
+                        <label class="label">
+                            {errors.price?.type === 'required' && <span className='label-text-alt text-red-500'>{errors.price.message}</span>}
+                        </label>
+                    </div>
 
-                <div class="form-control">
-                    <input type="number" placeholder="Quantity" class="input"  {...register("quantity", {
-                        required: {
-                            value: true,
-                            message: 'Quantity Required'
-                        },
-                    })} />
-                    <label class="label">
-                        {errors.quantity?.type === 'required' && <span className='label-text-alt text-red-500'>{errors.quantity.message}</span>}
-                    </label>
-                </div>
+                    <div class="form-control">
+                        <input type="number" placeholder="Quantity" class="input input-bordered"  {...register("quantity", {
+                            required: {
+                                value: true,
+                                message: 'Quantity Required'
+                            },
+                        })} />
+                        <label class="label">
+                            {errors.quantity?.type === 'required' && <span className='label-text-alt text-red-500'>{errors.quantity.message}</span>}
+                        </label>
+                    </div>
 
-                <div class="form-control">
-                    <input type="file" class="input"  {...register("image", {
-                        required: {
-                            value: true,
-                            message: 'Image Required'
-                        },
-                    })} />
-                    <label class="label">
-                        {errors.image?.type === 'required' && <span className='label-text-alt text-red-500'>{errors.image.message}</span>}
-                    </label>
-                </div>
+                    <div class="form-control">
+                        <input type="file" class="input input-bordered"  {...register("image", {
+                            required: {
+                                value: true,
+                                message: 'Image Required'
+                            },
+                        })} />
+                        <label class="label">
+                            {errors.image?.type === 'required' && <span className='label-text-alt text-red-500'>{errors.image.message}</span>}
+                        </label>
+                    </div>
 
-                <div class="form-control">
-                    <textarea type="text" placeholder="Description" class="input"  {...register("description", {
-                        required: {
-                            value: true,
-                            message: 'Description Required'
-                        },
-                    })} />
+                    <div class="form-control">
+                        <textarea type="text" placeholder="Description" class="input input-bordered"  {...register("description", {
+                            required: {
+                                value: true,
+                                message: 'Description Required'
+                            },
+                        })} />
 
-                    <label class="label">
-                        {errors.description?.type === 'required' && <span className='label-text-alt text-red-500'>{errors.description.message}</span>}
-                    </label>
-                </div>
+                        <label class="label">
+                            {errors.description?.type === 'required' && <span className='label-text-alt text-red-500'>{errors.description.message}</span>}
+                        </label>
+                    </div>
 
-                <div class="form-control">
-                    <input className='btn btn-primary w-full max-w-xs text-white' value="Add" type="submit" />
-                </div>
-            </form>
+                    <div class="form-control">
+                        <input className='btn btn-primary w-full max-w-xs text-white' value="Add" type="submit" />
+                    </div>
+                </form>
+            </div>
         </div>
     );
 };
