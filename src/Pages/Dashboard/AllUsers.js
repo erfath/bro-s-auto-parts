@@ -18,8 +18,8 @@ const AllUsers = () => {
 
     return (
         <div>
-            <h2 className="text-2xl">
-                All Users {users.length}
+            <h2 className="text-3xl font-semibold text-primary text-center mb-2">
+               List Of All Users
             </h2>
             <div class="overflow-x-auto">
                 <table class="table w-full">

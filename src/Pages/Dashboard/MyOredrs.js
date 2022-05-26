@@ -55,11 +55,9 @@ const MyOredrs = () => {
                                     {(order.totalPrice && !order.paid) && <Link to={`/dashboard/payment/${order._id}`} className='btn btn-sm btn-primary border-0 text-white hover:bg-info'>Pay</Link>}
                                     {(order.totalPrice && order.paid) && <span className='text-succes'>Paid</span>}
                                 </td>
-                                <td>{                            
-                                        <Link to={``} className='btn btn-link btn-sm text-error'>Cancel</Link>
-                                   
-                                    
-                                   } </td>
+                                <td>{order.paid && <p>  </p>}
+                                    {!order.paid && <Link to={``} className='btn btn-link btn-sm text-error'>Cancel</Link>}
+                                </td>
                             </tr>)
                         }
 

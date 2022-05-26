@@ -28,6 +28,7 @@ const ManageItems = () => {
 
     return (
         <div class="overflow-x-auto">
+            <h2 className='text-3xl text-primary text-center font-semibold mb-2'>Manage All Items Here</h2>
             <table class="table w-full">
                 <thead>
                     <tr>

@@ -60,7 +60,7 @@ const AddItem = () => {
 
     return (
         <div>
-            <h2 className='text-3xl font-semibold text-primary text-center'>Add Items here</h2>
+            <h2 className='text-3xl font-semibold text-primary text-center'>Add Item here</h2>
             <div className='flex justify-center items-center p-10 '>
                 <form onSubmit={handleSubmit(onSubmit)} class="card-body shadow-2xl border-2  ">
                     <div class="form-control">

@@ -7,7 +7,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register';
 import PrivateRoute from './Pages/Login/PrivateRoute';
-import ManageItems from './Pages/ManageItems/ManageItems';
+import ManageItems from './Pages/Dashboard/ManageItems';
 import ItemDetails from './Pages/Home/ItemDetails/ItemDetails';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -18,6 +18,7 @@ import RequireAdmin from './Pages/Login/RequireAdmin';
 import AddItem from './Pages/Dashboard/AddItem';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Payment from './Pages/Dashboard/Payment';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path='addItem' element={<RequireAdmin><AddItem></AddItem></RequireAdmin>}></Route>
             <Route path='manageItems' element={<RequireAdmin><ManageItems></ManageItems></RequireAdmin>}></Route>
             <Route path='users' element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
+            <Route path='manageOrders' element={<RequireAdmin><ManageAllOrders></ManageAllOrders></RequireAdmin>}></Route>
           </Route>
           <Route path='item/:id' element={
             <PrivateRoute>
