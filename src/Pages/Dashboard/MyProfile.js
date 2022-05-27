@@ -8,12 +8,12 @@ import auth from '../../firebase.init';
 const MyProfile = () => {
     const [user] = useAuthState(auth);
 
-    const [userInfo, setUserInfo] = useState('');
+        
 
     const handleSubmit = event => {
         event.preventDefault();
         const education = event.target.education.value;
-        const address = event.target.address.value;       
+        const address = event.target.address.value;
         const phone = event.target.phone.value;
         const social = event.target.social.value;
         const userInfo = {
@@ -35,56 +35,60 @@ const MyProfile = () => {
             .then(res => res.json())
             .then(success => {
                 if (success) {
-                    toast.success('Item Added to List Successfully');
-                    setUserInfo(' ')
+                    toast.success('Profile Updated Successfully');
+
                 }
                 else {
-                    toast.error("Sorry! Failed to Add Item")
+                    toast.error("Sorry! Failed to Update")
                 }
-                
+
             })
 
     }
 
     return (
-        <div class="hero min-h-screen ">
+        <div>
+            <h2 className='font-serif font-semibold'>Name: <span className='text-2xl text-orange-700'>{user.displayName}</span></h2>
+            <h2 className='font-serif font-semibold'>Email Address: <span className='text-2xl text-orange-700'>{user.email}</span></h2>
+            <div class="hero min-h-fit ">
 
-            <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl">
-                <h2 className='text-3xl text-primary text-center font-semibold mb-2 '>Update Your Profile</h2>
-                <form onSubmit={handleSubmit} class="card-body w-96 shadow-2xl ">
-                    <div class="form-control">
-                        <input type="text" value={user.displayName} class="input input-bordered" />
-                    </div>
+                <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl">
+                    <h2 className='text-3xl text-primary text-center font-semibold mb-2 '>Update Profile</h2>
+                    <form onSubmit={handleSubmit} class="card-body w-96 shadow-2xl ">
+                        <div class="form-control">
+                            <input type="text" value={user.displayName} class="input input-bordered" />
+                        </div>
 
-                    <div class="form-control">
-                        <input type="text" value={user.email} class="input input-bordered" />
-                    </div>
+                        <div class="form-control">
+                            <input type="text" value={user.email} class="input input-bordered" />
+                        </div>
 
-                    <div class="form-control">
-                        <input type="text" placeholder='Education Institute' name='education' class="input input-bordered" />
-                        <label class="label">
+                        <div class="form-control">
+                            <input type="text" placeholder='Education Institute' name='education' class="input input-bordered" />
+                            <label class="label">
 
-                        </label>
-                    </div>
-                    <div class="form-control">
+                            </label>
+                        </div>
+                        <div class="form-control">
 
-                        <input type="number" placeholder="Phone" name='phone' class="input input-bordered" />
-                        <label class="label">
+                            <input type="number" placeholder="Phone" name='phone' class="input input-bordered" />
+                            <label class="label">
 
-                        </label>
-                    </div>
+                            </label>
+                        </div>
 
-                    <div class="form-control">
-                        <input type="text" placeholder='Any Social URL' name='social' class="input input-bordered" />
-                    </div>
-                    <div class="form-control">
-                        <input type="text" placeholder='Address' name='address' class="input input-bordered" />
-                    </div>
+                        <div class="form-control">
+                            <input type="text" placeholder='Any Social URL' name='social' class="input input-bordered" />
+                        </div>
+                        <div class="form-control">
+                            <input type="text" placeholder='Address' name='address' class="input input-bordered" />
+                        </div>
 
-                    <div class="form-control">
-                        <input className='btn btn-primary w- hover:btn-info font-bold max-w-xs text-white' value="Add" type="submit" />
-                    </div>
-                </form>
+                        <div class="form-control">
+                            <input className='btn btn-primary w- hover:btn-info font-bold max-w-xs text-white' value="Add" type="submit" />
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     );

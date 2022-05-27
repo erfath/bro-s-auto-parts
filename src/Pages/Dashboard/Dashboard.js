@@ -9,7 +9,7 @@ const Dashboard = () => {
     const [admin] = useAdmin(user);
     return (
     
-            <div class="drawer drawer-mobile border-8">
+            <div class="drawer drawer-mobile border-8 ">
             <input id="dashboard-drawer" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content ">
                 <div className='flex justify-between p-1'>
@@ -18,22 +18,22 @@ const Dashboard = () => {
                 </div>
                 <Outlet></Outlet>
             </div>
-            <div class="drawer-side">
+            <div class="drawer-side ">
                 <label for="dashboard-drawer" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-72 bg-base-100 text-base-content">
+                <ul class="menu p-4 overflow-y-auto w-72 bg-secondary text-base-content">
                     {/* <!-- Sidebar content here --> */}
-                    <li className='font-bold'><Link to='/dashboard'>My Profile</Link></li>
+                    <li className='font-bold text-xl'><Link to='/dashboard'>My Profile</Link></li>
                     {!admin && <>
-                        <li className='font-bold'><Link to='/dashboard/orders'>My Orders</Link></li>
-                        <li className='font-bold'><Link to='/dashboard/review'>My Review</Link></li>
+                        <li className='font-bold text-xl'><Link to='/dashboard/orders'>My Orders</Link></li>
+                        <li className='font-bold text-xl'><Link to='/dashboard/review'>My Review</Link></li>
                     </>
                     }
 
                     {admin && <>
-                        <li className='font-bold'><Link to='/dashboard/users'>All Users</Link></li>
-                        <li className='font-bold'><Link to='/dashboard/addItem'>Add Item</Link></li>
-                        <li className='font-bold'><Link to='/dashboard/manageItems'>Manage Items</Link></li>
-                        <li className='font-bold'><Link to='/dashboard/manageOrders'>Manage All Orders</Link></li>
+                        <li className='font-bold text-xl'><Link to='/dashboard/users'>All Users</Link></li>
+                        <li className='font-bold text-xl'><Link to='/dashboard/addItem'>Add Item</Link></li>
+                        <li className='font-bold text-xl'><Link to='/dashboard/manageItems'>Manage Items</Link></li>
+                        <li className='font-bold text-xl'><Link to='/dashboard/manageOrders'>Manage All Orders</Link></li>
                     </>
 
                     }

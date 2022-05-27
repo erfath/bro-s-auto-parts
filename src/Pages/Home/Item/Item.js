@@ -24,7 +24,7 @@ const Item = ({ item }) => {
                         <p>Min. Order: {minOrder} </p>
                     </div>
                     <div class="card-actions ">
-                        <button className='ntn btn-primary rounded-lg text-white hover:bg-info p-2' onClick={() => navigateToItemDetails(_id)}>Purchase Now</button>
+                        <button className='ntn btn-primary rounded-lg text-white hover:bg-info p-2' onClick={() => navigateToItemDetails(_id)}>Purchase</button>
                     </div>
                 </div>
 

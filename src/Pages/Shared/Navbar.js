@@ -17,7 +17,7 @@ const Navbar = ({ children }) => {
       <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col">
         {/* <!-- Navbar --> */}
-        <div class="w-full navbar sticky top-0 z-50 bg-base-100 opacity-95 h-12 text-primary ">
+        <div class="w-full navbar sticky top-0 z-50 bg-primary opacity-95 h-12 text-white ">
           <div class="flex-1 px-2 mx-2 font-serif font-bold text-3xl"> <img style={{ height: '120px' }} src={carlogo} alt="" /> Bro's Auto Parts</div>
           <div class="flex-none hidden lg:block">
             <ul class="menu menu-horizontal">
