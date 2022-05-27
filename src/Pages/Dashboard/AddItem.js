@@ -59,10 +59,10 @@ const AddItem = () => {
     }
 
     return (
-        <div>
-            <h2 className='text-3xl font-semibold text-primary text-center'>Add Item here</h2>
-            <div className='flex justify-center items-center p-10 '>
-                <form onSubmit={handleSubmit(onSubmit)} class="card-body shadow-2xl border-2  ">
+        <div className='hero min-h-screen'>            
+            <div className='card flex justify-center  items-center p-10 '>
+            <h2 className='text-3xl font-semibold text-primary text-center mb-2'>Add Item here</h2>
+                <form onSubmit={handleSubmit(onSubmit)} class="card-body rounded-lg shadow-2xl border-2  ">
                     <div class="form-control">
 
                         <input type="text" placeholder="Item Name" class="input input-bordered" {...register("name", {
@@ -125,8 +125,8 @@ const AddItem = () => {
                         </label>
                     </div>
 
-                    <div class="form-control">
-                        <input className='btn btn-primary w-full max-w-xs text-white' value="Add" type="submit" />
+                    <div class="form-control ">
+                        <input className='btn btn-primary w-full hover:btn-info font-bold  max-w-sm text-white' value="Add" type="submit" />
                     </div>
                 </form>
             </div>

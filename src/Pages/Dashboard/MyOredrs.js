@@ -2,6 +2,7 @@ import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const MyOredrs = () => {
@@ -28,9 +29,31 @@ const MyOredrs = () => {
         }
     }, [user])
 
+
+    const handleDelete = (id) => {
+        const proceed = window.confirm('Are You Sure?')
+        if (proceed) {
+            const url = `http://localhost:5000/order/${id}`
+            fetch(url, {
+                method: "DELETE",
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        toast.success(`Canceled Your Order`)
+                    }
+                    const remaining = orders.filter(order => order._id !== id);
+                    setOrders(remaining);
+                })
+        }
+    }
+
     return (
         <div>
-            <h2>All my Orders {orders.length}</h2>
+            <h2 className='text-2xl text-primary font-semibold p-5'>Total Order: {orders.length}</h2>
             <div class="overflow-x-auto">
                 <table class="table lg:w-full">
 
@@ -50,13 +73,15 @@ const MyOredrs = () => {
                                 <th>{index + 1}</th>
                                 <td>{order.item}</td>
                                 <td>{order.totalPrice}</td>
-                                <td>Pending</td>
+                                <td>{!order.paid && <p>Placed</p>}
+                                    {order.paid && <p className='text-green-600'>Shipped</p>}
+                                </td>
                                 <td>
                                     {(order.totalPrice && !order.paid) && <Link to={`/dashboard/payment/${order._id}`} className='btn btn-sm btn-primary border-0 text-white hover:bg-info'>Pay</Link>}
-                                    {(order.totalPrice && order.paid) && <span className='text-succes'>Paid</span>}
+                                    {(order.totalPrice && order.paid) && <span className='text-green-600 font-bold'>Paid</span>}
                                 </td>
-                                <td>{order.paid && <p>  </p>}
-                                    {!order.paid && <Link to={``} className='btn btn-link btn-sm text-error'>Cancel</Link>}
+                                <td>
+                                    {!order.paid && <button onClick={() => handleDelete(order._id)} className='btn btn-link btn-sm text-error'>Cancel</button>}
                                 </td>
                             </tr>)
                         }

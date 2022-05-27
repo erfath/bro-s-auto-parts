@@ -7,7 +7,7 @@ import './Testimonial.css'
 const Testimonials = () => {
     return (
         <div >
-            <div className='testimonial lg:ml-20 ml-5 lg:mr-20 mr-5'>
+            <div className='testimonial lg:ml-20  ml-5 lg:mr-20 mr-5'>
                 <h1 className=' text-4xl text-primary p-10 font-bold'>Testimonials</h1>
             </div>
             <div class="h-96 carousel carousel-vertical rounded-box text-center flex items-center">

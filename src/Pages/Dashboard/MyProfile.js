@@ -47,10 +47,10 @@ const MyProfile = () => {
     }
 
     return (
-        <div class="hero min-h-screen bg-secondary">
+        <div class="hero min-h-screen ">
 
             <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl">
-                <h2 className='text-3xl text-primary text-center font-semibold mb-2 '>My Profile</h2>
+                <h2 className='text-3xl text-primary text-center font-semibold mb-2 '>Update Your Profile</h2>
                 <form onSubmit={handleSubmit} class="card-body w-96 shadow-2xl ">
                     <div class="form-control">
                         <input type="text" value={user.displayName} class="input input-bordered" />
@@ -82,7 +82,7 @@ const MyProfile = () => {
                     </div>
 
                     <div class="form-control">
-                        <input className='btn btn-primary w-full max-w-xs text-white' value="Add" type="submit" />
+                        <input className='btn btn-primary w- hover:btn-info font-bold max-w-xs text-white' value="Add" type="submit" />
                     </div>
                 </form>
             </div>

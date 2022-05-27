@@ -17,27 +17,27 @@ const Navbar = ({ children }) => {
       <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col">
         {/* <!-- Navbar --> */}
-        <div class="w-full navbar sticky top-0 z-50 bg-primary h-12 text-white ">
-          <div class="flex-1 px-2 mx-2 text-3xl"> <img style={{ height: '120px' }} src={carlogo} alt="" /> Bro's Auto Parts</div>
+        <div class="w-full navbar sticky top-0 z-50 bg-base-100 opacity-95 h-12 text-primary ">
+          <div class="flex-1 px-2 mx-2 font-serif font-bold text-3xl"> <img style={{ height: '120px' }} src={carlogo} alt="" /> Bro's Auto Parts</div>
           <div class="flex-none hidden lg:block">
             <ul class="menu menu-horizontal">
               {/* <!-- Navbar menu content here --> */}
-              <li><NavLink to='/home'>Home</NavLink></li>
+              <li className='font-bold '><NavLink to='/home'>Home</NavLink></li>
 
               {
                 user && <>
-                  <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+                  <li className='font-bold '><NavLink to='/dashboard'>Dashboard</NavLink></li>
                 </>
               }
 
-              <li><NavLink to='/blogs'>Blogs</NavLink></li>
-              <li><NavLink to='/portfolio'>My Portfolio</NavLink></li>
+              <li className='font-bold '><NavLink to='/blogs'>Blogs</NavLink></li>
+              <li className='font-bold '><NavLink to='/portfolio'>My Portfolio</NavLink></li>
 
-              <li>{
+              <li className='font-bold '>{
                 user
 
                   ?
-                  <span><button className='btn btn-primary hover:bg-error text-white' onClick={handleSignOut}>Logout</button><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <span><button className='btn btn-info hover:btn-error text-white' onClick={handleSignOut}>Logout</button><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>{user.displayName}</span>
 
@@ -62,8 +62,13 @@ const Navbar = ({ children }) => {
         <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
           {/* <!-- Sidebar content here --> */}
           <li><NavLink to='/home'>Home</NavLink></li>
-          <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+          {
+            user && <>
+              <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+            </>
+          }
           <li><NavLink to='/blogs'>Blogs</NavLink></li>
+          <li><NavLink to='/portfolio'>My Portfolio</NavLink></li>
           <li>{
             user
 

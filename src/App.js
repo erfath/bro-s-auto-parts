@@ -22,6 +22,8 @@ import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import NotFound from './Pages/NotFound/NotFound';
 import Blogs from './Pages/Blogs/Blogs';
+import RecentProjects from './Pages/MyPortfolio/RecentProjects';
+
 
 function App() {
   return (
@@ -51,12 +53,12 @@ function App() {
             </PrivateRoute>
           }></Route>
           <Route path='portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
-          <Route path='blogs' element={<Blogs></Blogs>}></Route>
-          <Route path='profile' element={<Home></Home>}></Route>  
+          <Route path='blogs' element={<Blogs></Blogs>}></Route>  
+          <Route path='projects' element={<RecentProjects></RecentProjects>}></Route>  
           <Route path='login' element={<Login></Login>}></Route>
           <Route path='register' element={<Register></Register>}></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
-        </Routes>
+        </Routes>       
       </Navbar>
       <ToastContainer />
     </div>
