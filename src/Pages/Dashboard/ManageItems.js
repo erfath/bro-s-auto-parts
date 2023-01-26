@@ -8,7 +8,7 @@ const ManageItems = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are You Sure?')
         if (proceed) {
-            const url = `http://localhost:5000/item/${id}`
+            const url = `https://auto-parts-m2h1.onrender.com/item/${id}`
             fetch(url, {
                 method: "DELETE",
                 headers: {

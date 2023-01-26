@@ -10,7 +10,7 @@ const ItemDetails = () => {
     const [item, setItem] = useState({});
     const [user] = useAuthState(auth);
     useEffect(() => {
-        const url = `http://localhost:5000/item/${id}`;
+        const url = `https://auto-parts-m2h1.onrender.com/item/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data));
@@ -56,7 +56,7 @@ const ItemDetails = () => {
             
         }
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://auto-parts-m2h1.onrender.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

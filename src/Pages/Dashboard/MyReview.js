@@ -18,7 +18,7 @@ const MyReview = () => {
             feedback,
             rating,
         }
-        fetch('http://localhost:5000/review', {
+        fetch('https://auto-parts-m2h1.onrender.com/review', {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

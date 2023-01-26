@@ -5,7 +5,7 @@ const useItems = (quantity) => {
     
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/item')
+        fetch('https://auto-parts-m2h1.onrender.com/item')
             .then(res => res.json())
             .then(data => {
                 if(quantity){

@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 
 const ManageAllOrders = () => {
-    const { data: orders, isLoading } = useQuery('orders', () => fetch('http://localhost:5000/orders', {
+    const { data: orders, isLoading } = useQuery('orders', () => fetch('https://auto-parts-m2h1.onrender.com/orders', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

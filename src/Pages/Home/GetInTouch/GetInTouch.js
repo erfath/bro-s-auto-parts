@@ -19,7 +19,7 @@ const GetInTouch = () => {
             message
         }
 
-        fetch('http://localhost:5000/comments', {
+        fetch('https://auto-parts-m2h1.onrender.com/comments', {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

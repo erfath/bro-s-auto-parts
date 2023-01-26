@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const UserRow = ({ user, refetch, index }) => {
     const { email, role } = user;
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://auto-parts-m2h1.onrender.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -22,7 +22,7 @@ const UserRow = ({ user, refetch, index }) => {
     const handleDelete = email => {
         const proceed = window.confirm('Are You Sure?')
         if (proceed){
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://auto-parts-m2h1.onrender.com/user/${email}`, {
                 method: 'DELETE',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

@@ -7,7 +7,7 @@ import Loading from '../Shared/Loading';
 const AddItem = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    const { data: items, isLoading } = useQuery('items', () => fetch(`http://localhost:5000/item`).then(res => res.json()));
+    const { data: items, isLoading } = useQuery('items', () => fetch(`https://auto-parts-m2h1.onrender.com/item`).then(res => res.json()));
     const imgStorageKey = '852f1ded9ccf96152fa8763828b39cff'
 
     const onSubmit = async data => {
@@ -30,7 +30,7 @@ const AddItem = () => {
                         description: data.description,
                         icon: img
                     }
-                    fetch('http://localhost:5000/item', {
+                    fetch('https://auto-parts-m2h1.onrender.com/item', {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json',

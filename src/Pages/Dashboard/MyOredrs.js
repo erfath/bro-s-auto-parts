@@ -11,7 +11,7 @@ const MyOredrs = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?buyerEmail=${user.email}`, {
+            fetch(`https://auto-parts-m2h1.onrender.com/order?buyerEmail=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -33,7 +33,7 @@ const MyOredrs = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are You Sure?')
         if (proceed) {
-            const url = `http://localhost:5000/order/${id}`
+            const url = `https://auto-parts-m2h1.onrender.com/order/${id}`
             fetch(url, {
                 method: "DELETE",
                 headers: {
